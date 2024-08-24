@@ -9,7 +9,8 @@ Liquid2 is a text-based templating language based on [Shopify/Liquid].
 
 ## Table of contents
 
-TODO
+- toc
+  {:toc}
 
 {% include introduction.md %}
 {% include syntax_and_semantics.md %}
