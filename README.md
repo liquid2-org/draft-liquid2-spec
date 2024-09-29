@@ -10,7 +10,7 @@ This specification is under active development. If you’re already familiar wit
 
 ### Conditional expressions
 
-Conditional expressions (those in `if` and `unless` tags, and in ternary expressions) support a logical `not` operator and grouping terms with parentheses. Unlike Shopify/Liquid, without parentheses, `and` binds more tightly than `or`.
+Conditional expressions (those in `if` and `unless` tags, and in [ternary expressions](#ternary-expressions)) support a logical `not` operator and grouping terms with parentheses. Without parentheses, `and` binds more tightly than `or`.
 
 ### Variables
 
