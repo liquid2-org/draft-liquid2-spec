@@ -14,7 +14,9 @@ Conditional expressions (those in `if` and `unless` tags, and in [ternary expres
 
 ### Variables
 
-Every variable is a query following [RFC 9535](https://datatracker.ietf.org/doc/html/rfc9535) syntax and semantics (See [discussion](https://github.com/liquid2-org/draft-liquid2-spec/discussions/1)).
+<s>Every variable is a query following [RFC 9535](https://datatracker.ietf.org/doc/html/rfc9535) syntax and semantics (See [discussion](https://github.com/liquid2-org/draft-liquid2-spec/discussions/1)).</s>
+
+After a couple different implementations and some performance profiling, we have chosen to stick with simpler paths rather than more complex JSONPath queries. We could accept some reduction in parsing performance, considering the extra complexity, but not a reduction in render performance. We're assuming that most template authors would not use advanced queries, if they were available and, ultimately, the drop in performance is not worth it for a little-used feature.
 
 ### Whitespace Control
 
