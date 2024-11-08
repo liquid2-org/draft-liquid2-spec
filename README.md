@@ -6,17 +6,19 @@ Discuss ideas with [GitHub discussions](https://github.com/liquid2-org/draft-liq
 
 ## Overview
 
-This specification is under active development. If you’re already familiar with Liquid, here are some highlights of the changes Liquid2 introduces.
+This specification is under active development. If you’re already familiar with Liquid, here are some notable changes.
 
 ### Conditional expressions
 
 Conditional expressions (those in `if` and `unless` tags, and in [ternary expressions](#ternary-expressions)) support a logical `not` operator and grouping terms with parentheses. Without parentheses, `and` binds more tightly than `or`.
 
-### Variables
+### Variables and paths
 
-<s>Every variable is a query following [RFC 9535](https://datatracker.ietf.org/doc/html/rfc9535) syntax and semantics (See [discussion](https://github.com/liquid2-org/draft-liquid2-spec/discussions/1)).</s>
+Unquoted variables and paths (`a.b` vs `a["b"]`) are no longer allowed to contain hyphens and leading digits. This is in case we want to implement arithmetic operators in the future.
 
-After a couple different implementations and some performance profiling, we have chosen to stick with simpler paths rather than more complex JSONPath queries. We could accept some reduction in parsing performance, considering the extra complexity, but not a reduction in render performance. We're assuming that most template authors would not use advanced queries, if they were available and, ultimately, the drop in performance is not worth it for a little-used feature.
+### Strings
+
+String literals are allowed to contain markup delimiters (`{{`, `}}`, `{%`, `%}`, `{#` and `#}`) and support c-like escape sequence to allow for including quote characters.
 
 ### Whitespace Control
 
