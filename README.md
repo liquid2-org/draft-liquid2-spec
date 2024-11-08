@@ -18,7 +18,8 @@ Unquoted variables and paths (`a.b` vs `a["b"]`) are no longer allowed to contai
 
 ### Strings
 
-String literals are allowed to contain markup delimiters (`{{`, `}}`, `{%`, `%}`, `{#` and `#}`) and support c-like escape sequence to allow for including quote characters.
+- String literals are allowed to contain markup delimiters (`{{`, `}}`, `{%`, `%}`, `{#` and `#}`) and support c-like escape sequence to allow for including quote characters.
+- We can loop over "characters" in a strings with the `{% for %}` tag and get the first and last character with the special `.first` and `.last` properties.
 
 ### Whitespace Control
 
